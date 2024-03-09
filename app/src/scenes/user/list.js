@@ -94,7 +94,7 @@ const Create = () => {
     <div style={{ marginBottom: 10 }}>
       <div className="text-right">
         <button className="bg-[#0560FD] text-[#fff] py-[12px] px-[22px] w-[170px] h-[48px]	rounded-[10px] text-[16px] font-medium" onClick={() => setOpen(true)}>
-          Create new user
+          New user
         </button>
       </div>
       {open ? (
