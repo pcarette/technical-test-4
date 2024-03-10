@@ -43,6 +43,7 @@ const Detail = ({ user }) => {
     <Formik
       initialValues={user}
       onSubmit={async (values) => {
+        delete values.changePassword;
         try {
           await api.put(`/user/${user._id}`, values);
           toast.success("Updated!");
@@ -52,7 +53,7 @@ const Detail = ({ user }) => {
           toast.error("Some Error!");
         }
       }}>
-      {({ values, handleChange, handleSubmit, isSubmitting }) => {
+      {({ values, handleChange, handleSubmit, isSubmitting, setValues }) => {
         return (
           <React.Fragment>
             <div className="flex justify-between flex-wrap mt-4">
@@ -87,6 +88,13 @@ const Detail = ({ user }) => {
                   value={values.job_title}
                   onChange={handleChange}
                 />
+              </div>
+              <div className="w-full md:w-[165px] mt-[10px] md:mt-0">
+                <div className="text-[14px] text-[#212325] font-medium	">Availability</div>
+                <select className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" type="select" name="availability" value={values.availability} onChange={handleChange}>
+                  <option value="available">Available</option>
+                  <option value="not available">Not available</option>
+                </select>
               </div>
             </div>
 
@@ -131,7 +139,18 @@ const Detail = ({ user }) => {
                 value={values.description}
                 onChange={handleChange}></textarea>
             </div>
-
+            <div className="flex items-center mt-3">
+              <input
+                type="checkbox"
+                id="changePasswordToggle"
+                className="mr-2"
+                checked={values.changePassword}
+                onChange={() => setValues((prevValues) => ({ ...prevValues, changePassword: !prevValues.changePassword }))}
+              />
+              <label htmlFor="changePasswordToggle" className="text-[14px] text-[#212325] font-medium">
+                Change Password
+              </label>
+            </div>
             <div className="flex  mt-2">
               <LoadingButton className="bg-[#0560FD] text-[16px] font-medium text-[#FFFFFF] py-[12px] px-[22px] rounded-[10px]" loading={isSubmitting} onClick={handleSubmit}>
                 Update
