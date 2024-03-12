@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname + "/../public"));
 
-app.use("/user", require("./controllers/user"));
+app.use("/user", require("./routes/user"));
 app.use("/project", require("./controllers/project"));
 app.use("/activity", require("./controllers/activity"));
 
