@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import User from "./list";
-import UserView from "./view";
+import User from "./pages/list";
+import UserView from "./pages/view";
 
 export default () => {
   return (
