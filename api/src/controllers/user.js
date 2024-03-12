@@ -1,6 +1,6 @@
-const UserObject = require("../models/user");
-
 const usersService = require("../services/user");
+
+const userJoiSchema = require("../joi/user");
 
 const { validatePassword } = require("../utils");
 
@@ -43,7 +43,9 @@ const userController = {
 
       const data = { ...req.body, organisation: req.user.organisation };
 
-      const user = await usersService.create(data);
+      const {error, value: userData} = userJoiSchema.validate(data)
+      
+      const user = await usersService.create(userData);
 
       return res.status(200).send({ data: user, ok: true });
     } catch (error) {
@@ -55,8 +57,11 @@ const userController = {
   update: async (req, res) => {
     try {
       const obj = req.body;
-
-      const user = await usersService.update(req.params.id, obj);
+      
+      //validation
+      const {error, value: userData} = userJoiSchema.validate(obj)
+      
+      const user = await usersService.update(req.params.id, userData);
       res.status(200).send({ ok: true, user });
     } catch (error) {
       console.log(error);
@@ -66,7 +71,10 @@ const userController = {
   updateCurrent: async (req, res) => {
     try {
       const obj = req.body;
-      const data = await usersService.update(req.user._id, obj);
+      //validation
+      const {error, value: userData} = userJoiSchema.validate(obj)
+      
+      const data = await usersService.update(req.user._id, userData);
       res.status(200).send({ ok: true, data });
     } catch (error) {
       console.log(error);
