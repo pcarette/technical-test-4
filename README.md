@@ -81,3 +81,6 @@ I did the minimum security best practices to set up the user route controller an
 I did a small architecture to split components, pages, and added at the very end some naming conventions, same work need to be done with "project" and maybe other parts of the app
 
 Assuming we have data validation in backend, i didn't use yup, but it could be useful when we'll need to scale
+
+
+## Merci pour votre temps, j'aurais dû faire les changements d'architecture sur toutes les parties du projet mais j'ai eu au final peu de temps sur les 5 derniers jours 
