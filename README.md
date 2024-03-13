@@ -46,16 +46,15 @@ Send us the project and answer to those simple questions :
 ## What bugs did you find ? How did you solve these and why ?
 
 
-Il y avait 3 bugs facilement visibles, 2 bugs sur le front et 1 sur le back : 
-- La soumission du formulaire ne se faisait pas correctement (onChange -> onClick)
-- le retour vers la user list n'avait pas lieu (history.push(`/user`))
+There were 3 easily visible bugs, 2 on the front end, and 1 on the back end:
 
-- le mot de passe était apparent à chaque requête get vers la route des utilisateurs : ({select : false})
+- The form submission was not being done correctly (onChange -> onClick)
 
+- The return to the user list was not happening (history.push(/user))
 
+- The password was exposed in every GET request to the user route: ({select: false})
 
-Je les ai résolus pour permettre la mise à jour des documents de la collection user et pour apporter des normes de sécurités minimales sur le projet
-
+I have resolved them to enable the update of documents in the user collection and to implement minimum security standards in the project.
 
 ## Which feature did you develop and why ?
 
@@ -83,4 +82,4 @@ I did a small architecture to split components, pages, and added at the very end
 Assuming we have data validation in backend, i didn't use yup, but it could be useful when we'll need to scale
 
 
-## Merci pour votre temps, j'aurais dû faire les changements d'architecture sur toutes les parties du projet mais j'ai eu au final peu de temps sur les 5 derniers jours 
+#### Merci pour votre temps, j'aurais dû faire les changements d'architecture sur toutes les parties du projet mais j'ai eu au final peu de temps sur les 5 derniers jours 
