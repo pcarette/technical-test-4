@@ -73,9 +73,9 @@ This is the most concerning part of the project. There's missing many things :
 
 I did the minimum security best practices to set up the user route controller and services, and finally joi schemas to fit with mongoose schemas, same work need to be done with "project" and maybe other parts of the app
 
--many components in the same part, pretty unreadable jsx
--no data validation (with Yup for example)
--no specific services for api calls
+- many components in the same part, pretty unreadable jsx
+- no data validation (with Yup for example)
+- no specific services for api calls
 
 I did a small architecture to split components, pages, and added at the very end some naming conventions, same work need to be done with "project" and maybe other parts of the app
 
