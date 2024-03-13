@@ -7,7 +7,7 @@ import Loader from "../../../components/loader";
 
 import api from "../../../services/api";
 
-const UserList = () => {
+const List = () => {
   const [users, setUsers] = useState(null);
   const [projects, setProjects] = useState([]);
   const [usersFiltered, setUsersFiltered] = useState(null);
@@ -86,4 +86,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default List;
