@@ -137,7 +137,6 @@ const Detail = ({ user }) => {
                 <input
                   className="projectsInput text-[14px] font-normal text-[#212325] bg-[#F9FBFD] rounded-[10px]"
                   name="password"
-                  disabled
                   value={values.password}
                   onChange={handleChange}
                 />
